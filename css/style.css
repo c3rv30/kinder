@@ -1,0 +1,316 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+  height: 100%;
+	background: #f4f4f4;
+	margin:0px;
+}
+
+
+header{ height:80px; background:url(../images/bg_header.jpg) repeat; width:auto;}
+#container{ margin:auto; width:960px; min-height: 100%;}
+.wrapper{ float:left;}
+.logout{ float:right;}
+.logout:hover{background-color:white;}
+#logo{width:80px; height:20px; margin-top:2px;}
+#content{ width:960px; margin:20px auto auto auto;
+	background-color:white; 
+	
+ 	-webkit-box-shadow: 0 15px 10px #777; 
+	-moz-box-shadow: 0 15px 10px #777; 
+	box-shadow: 0 15px 10px #777;
+	padding-bottom:40px; 
+	/*-webkit-transform: rotate(-3deg); 
+	-moz-transform: rotate(-3deg); 
+	-o-transform: rotate(-3deg); 
+	-ms-transform: rotate(-3deg); 
+	transform: rotate(-3deg);*/
+	margin-bottom:40px;
+}
+
+.top{ width:960px;height: 80px;
+ margin:20px auto auto auto;}
+#box-buttonleft{width:200px; height:200px; margin-top:60px; margin-left:35px; float:left;}
+#box-button{ width: 200px; height: 200px; margin-top: 60px; margin-left: 30px; float: left;}
+#box-buttondown{ width: 200px; height: 200px; margin-top: 100px; margin-left: 35px; margin-bottom: 60px; clear: both;}
+#box-buttonleft:hover, #box-button:hover, #box-buttondown:hover {
+	cursor:pointer;
+	border-radius:1px #333;
+	-webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+  -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+  box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+}
+	
+#admissi{width:126px;	height:141px;	background-image:url(../images/leon.png);	background-repeat:no-repeat;	margin-top:27px;	margin-left:33px;	float:left;	}
+#search{ width: 107px; height: 160px; background-image: url(../images/jirafa2.png); background-repeat: no-repeat;  margin-top: 25px; margin-left: 45px; float: left;}
+#users{ width: 156px; height: 172px; background-image: url(../images/oso_panda.png); background-repeat: no-repeat; margin-top: 16px; margin-left: 20px; float: left;}
+#config{ width: 147px; height: 160px; background-image: url(../images/camello.png); background-repeat: no repeat; margin-top: 20px; margin-left: 27px; float: left;}
+#rrhh{width: 153px; height: 149px; background-image: url(../images/hipo.png); background-repeat: no repeat; margin-top: 27px; margin-left: 25px; float: left;}
+
+
+
+/* ====== Tooltip ======= */	
+.tooltip {
+	display:none;
+	position:absolute;
+	/*border:1px solid #333;*/
+	background-color:#666;
+	border-radius:9px;
+	padding:10px;
+	color:#fff;
+	font-size:12px Arial;
+	font:bold;
+}
+
+
+.link-descr{color:#333; font-family: arial; }
+a:link{color: green;}
+a:visited {color: green;}
+
+
+
+/* ============= Efecto Caja Mensaje =========*/
+
+#message{width:200px; height:80px;}
+.efecto2
+{
+  position: relative;
+}
+.efecto2:before, .efecto2:after
+{
+/* Posiciona la sombra por detras del color de la caja*/
+                  z-index: -1;
+                  position: absolute;
+                  /* no aplico ningún contenidos HTML */
+                  content: "";
+                  /* posiciona la sombra con respecto al borde inferior, izquierdo y superior */
+                  bottom: 15px;
+                  left: 10px;
+                  top: 80%;
+                  /* configura el ancho */
+                  width: 50%;
+                  /* color de fondo */
+                  background: #777;
+                  /* definicion de la sombra estandar para box-shadow */
+                  -webkit-box-shadow: 0 15px 10px #777;
+                  -moz-box-shadow: 0 15px 10px #777;
+                  box-shadow: 0 15px 10px #777;
+                  /* rotacion de la sombra */
+                  -webkit-transform: rotate(-3deg);
+                  -moz-transform: rotate(-3deg);
+                  -o-transform: rotate(-3deg);
+                  -ms-transform: rotate(-3deg);
+                  transform: rotate(-3deg);
+}
+
+.efecto2:after
+{
+                  /* rotacion de la sombra */
+                  -webkit-transform: rotate(3deg);
+                  -moz-transform: rotate(3deg);
+                  -o-transform: rotate(3deg);
+                  -ms-transform: rotate(3deg);
+                  transform: rotate(3deg);
+                  /* posiciona la sombra con respecto al borde izquierdo y derecho */
+                  right: 10px;
+                  left: auto;
+}
+
+
+
+
+
+
+
+/* ------------ Menu Nav ------------- */
+
+
+#nav{ 
+	clear:both;
+	width:auto; 
+	position: absolute;
+	z-index:1;
+	margin-top:50px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  display: table;
+  /*margin: 1em auto;*/
+  margin-left:0;
+  font-size:13px;
+}
+.menu > li {
+  display: inline-block;
+  position: relative;
+}
+.menu > li + li {
+  /*border-left: solid 1px #222;
+  border-right: solid 1px #222;
+  border-top: solid 1px #222;*/
+}
+.menu > li:hover .sub {
+  left: auto;
+}
+.menu a {
+  display: block;
+  padding: .5em 2em;
+  background: #FFF;
+  background: #f4f4f4;
+  color: #333;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+.menu a:hover,
+.menu a:focus {
+  background: #069c7e;
+}
+.sub {
+  margin-bottom:0;
+  border-bottom: solid 3px #222;
+  position: absolute;
+  width: 150%;
+  left: -9999px;
+}
+.sub > li + li {
+  border-top: solid 1px #222;
+}
+.sub a {
+	background-image:url(../images/bg_header.jpg);
+  font-size: 14px;
+  padding: .7em 1em;
+}
+.show {
+  left: auto;
+}
+
+
+/* -------------   Boton ----------*/
+
+.boton{
+  font-size: 20px;
+  font-weight: bold;
+  color:white;
+  background: #333333;
+  border-radius: 5px;
+  border: 0px;
+  width: auto;
+  height: 35px;
+  text-decoration: none; 
+}
+
+.boton:hover{
+  background-color:#777777;
+}
+
+
+/* ------------- Tablas ----------*/
+
+#gradient-style
+{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  font-size: 12px;
+  margin: 45px;
+  width: auto;
+  text-align: left;
+  border-collapse: collapse;
+}
+#gradient-style th
+{
+  font-size: 13px;
+  font-weight: normal;
+  padding: 8px;
+  background: #b9c9fe url('../images/gradhead.png') repeat-x;
+  border-top: 2px solid #d3ddff;
+  border-bottom: 1px solid #fff;
+  color: #039;
+}
+#gradient-style td
+{
+  padding: 8px; 
+  border-bottom: 1px solid #fff;
+  color: #669;
+  border-top: 1px solid #fff;
+  background: #e8edff url('../images/gradback.png') repeat-x;
+}
+#gradient-style tfoot tr td
+{
+  background: #e8edff;
+  font-size: 12px;
+  color: #99c;
+}
+#gradient-style tbody tr:hover td
+{
+  background: #d0dafd url('../images/gradhover.png') repeat-x;
+  color: #339;
+}
+
+
+.subTitle{
+  font-family:'Arial';
+  float:left; margin-top:12px; margin-left:8px;
+}
+
+
+/* ------------- Mensaje ----------*/
+
+.exito {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image:url('../images/exito.png');
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size:13px;
+    width:180px;
+    border-radius:2px;
+    border:solid 1.8px green;
+    padding:15px 10px 15px 50px;
+    text-align:center;
+    background-position: 10px center;
+    position:relative;
+    margin-left:50px;
+    margin-bottom: 30px
+}
+
+.advertencia {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image:url('../images/alerta.png');
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size:13px;
+    width:auto;
+    border-radius:2px;
+    border:solid 1.8px green;
+    padding:15px 10px 15px 50px;
+    text-align:center;
+    background-position: 10px center;
+    position:relative;
+    margin-left:50px;
+    margin-bottom: 30px
+}
+
+
+
+
+/* ------------- Footer ----------*/
+
+footer{ background-color:#A0C416; margin-bottom:0; height:50px; margin-top: -150; position: relative;}
+.container{width:960px; margin:auto auto 0px auto;}
+footer .container {color:#333;font-size:16px;line-height:1.2em;padding:16px 0 16px 0;font-family:'ColaborateThinRegular'}
+footer .copy {float:left}
+footer .copy a {color:#fff;text-decoration:none}
+footer .copy a:hover {-moz-transition:all 0.3s ease-out; /* FF3.7+ */ -o-transition:all 0.3s ease-out; /* Opera 10.5 */ -webkit-transition:all 0.3s ease-out; /* Saf3.2+, Chrome */ color:#e83709}
+footer .phone {float:right;font-style:normal}
+footer .phone strong {font-family:'ColaborateBoldRegular';font-weight:normal;color:#e83709}

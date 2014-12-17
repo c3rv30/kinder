@@ -1,0 +1,88 @@
+function listarPagosActivos(){
+			$sentencia = "select * from pagos where estado='1' order by rut_nino asc";
+			$id_ejecucion = mysql_query($sentencia, $this->id_con);		
+			
+			echo '<table width="800" border="1">';
+				echo '<caption><b>Pagos Activos</b></caption>';
+				echo '<tr>';
+					echo '<th>Codigo</th>';
+					echo '<th>Rut Nino</th>';
+					echo '<th>Jornada</th>';
+					echo '<th>Total Mensual</th>';
+					echo '<th>Matricula</th>';
+					echo '<th>Enero</th>';
+					//echo '<th>Febrero</th>';
+					//echo '<th>Marzo</th>';
+					echo '<th>Estado</th>';
+					//echo '<th>Eliminar</th>';
+				echo '</tr>';
+				while($rs = mysql_fetch_array($id_ejecucion, $this->id_bd)){
+							
+							$rs2 = mysql_query('select * from tipopago where cod_tipPago='.$rs['cod_tippago'].'');
+							$rw = mysql_fetch_array($rs2);
+					echo '<tr>';
+						echo '<td>' .$rs['cod_pagos']. '</td>';
+						echo '<td>' .$rs['rut_nino']. '</td>';
+						echo '<td>' .$rw['jornada']. '</td>';
+						echo '<td>' .$rw['precio']. '</td>';
+						echo "<td> <a href='pagos.php?matriculapag='matricula'>".$rs['matricula']."</a></td>";
+						echo "<td> <a href='pagos.php?eneropag='enero'>".$rs['enero']."</a></td>";
+						//echo "<td> <a href='pagos.php?febreropag='febrero'>".$rs['febrero']."</a></td>";
+						//echo "<td> <a href='pagos.php?marzopag=marzo'>".$rs['marzo']."</a></td>";
+						$estado = "";
+						if($rs["estado"] == 1){
+							$estado = "Activo";
+						}else{
+							$estado = "Inactivo";
+						}
+						echo "<td> <a href='pagos.php?rutina=".$rs['rut_nino']."'>".$estado."</a></td>";
+						//echo "<td> <a href='pagos.php?ruteli=".$rs['rut_nino']."'>Pinche Aqui</a></td>";						
+					echo '</tr>';					
+				}				
+			echo '</table>';
+		}
+		
+
+		function listarPagosInactivos(){
+			$sentencia = "select * from pagos where estado='0' order by rut_nino asc";
+			$id_ejecucion = mysql_query($sentencia, $this->id_con);		
+			
+			echo '<table width="800" border="1">';
+				echo '<caption><b>Pagos Inactivos</b></caption>';
+				echo '<tr>';
+					echo '<th>Codigo</th>';
+					echo '<th>Rut Nino</th>';
+					echo '<th>Jornada</th>';
+					echo '<th>Total Mensual</th>';
+					echo '<th>Matricula</th>';
+					echo '<th>Enero</th>';
+					//echo '<th>Febrero</th>';
+					//echo '<th>Marzo</th>';
+					echo '<th>Estado</th>';
+					//echo '<th>Eliminar</th>';
+				echo '</tr>';
+				while($rs = mysql_fetch_array($id_ejecucion, $this->id_bd)){
+							
+							$rs2 = mysql_query('select * from tipopago where cod_tipPago='.$rs['cod_tippago'].'');
+							$rw = mysql_fetch_array($rs2);
+					echo '<tr>';
+						echo '<td>' .$rs['cod_pagos']. '</td>';
+						echo '<td>' .$rs['rut_nino']. '</td>';
+						echo '<td>' .$rw['jornada']. '</td>';
+						echo '<td>' .$rw['precio']. '</td>';
+						echo "<td> <a href='pagos.php?matriculapag='matricula'>".$rs['matricula']."</a></td>";
+						echo "<td> <a href='pagos.php?eneropag='enero'>".$rs['enero']."</a></td>";
+						//echo "<td> <a href='pagos.php?febreropag='febrero'>".$rs['febrero']."</a></td>";
+						//echo "<td> <a href='pagos.php?marzopag=marzo'>".$rs['marzo']."</a></td>";
+						$estado = "";
+						if($rs["estado"] == 1){
+							$estado = "Activo";
+						}else{
+							$estado = "Inactivo";
+						}
+						echo "<td> <a href='pagos.php?rutact=".$rs['rut_nino']."'>".$estado."</a></td>";
+						//echo "<td> <a href='pagos.php?ruteli=".$rs['rut_nino']."'>Pinche Aqui</a></td>";						
+					echo '</tr>';					
+				}				
+			echo '</table>';
+		}
